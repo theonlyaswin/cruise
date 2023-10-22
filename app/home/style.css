@@ -1,0 +1,240 @@
+:root {
+    --primary: #23C55E;
+    --secondary: #000003;
+}
+
+body {
+    background: var(--secondary);
+    color: var(--primary);
+    font-family: Poppins;
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    height: 100vh;
+}
+
+.container .nav {
+    width: auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--primary);
+}
+
+.container .nav h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.container .nav img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+    outline: 1px solid var(--primary);
+    outline-offset: 1px;
+}
+
+.container .workspace {
+    display: flex;
+    height: 100%;
+}
+
+.container .workspace .cont-left {
+    padding: 15px;
+    width: 25vw;
+}
+
+.container .workspace .cont-left .linear1 {
+    background: #141414;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .workspace .cont-left .linear1 h2 {
+    font-family: Poppins;
+    font-size: 18px;
+    margin: 0;
+}
+
+input[type=text] {
+    font-size: 14px;
+    font-family: Poppins;
+    border-radius: 8px;
+    border: 2px solid #555555;
+    background: none;
+    transition: all 0.2s ease-in;
+    color: #FFFFFF;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+}
+
+input[type=text]:focus {
+    outline: none;
+    border: 2px solid var(--primary);
+}
+
+input[type=text]::placeholder {
+    color: #FFFFFF;
+}
+
+button {
+    width: 100%;
+    border: none;
+    margin: 10px;
+    background: var(--primary);
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: Poppins;
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: all 0.2s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+.map {
+    width: 75vw;
+    height: 100vh;
+    filter: grayscale(100%) invert(92%) contrast(83%);
+}
+
+.container .workspace .container-linear-vertical {
+    background: #141414;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin-left: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 2px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@media screen and (max-width:1000px) {
+    .container .workspace .cont-left {
+        position: fixed;
+        top: 50px;
+        width: 100vw;
+        z-index: 999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .workspace .cont-left .linear1 h2 {
+        width: 100%;
+        margin-left: 40px;
+    }
+
+    button {
+        width: 900px;
+        margin-right: 40px;
+    }
+
+    .container .workspace .cont-left .linear1 {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .container .workspace .container-linear-vertical {
+        position: absolute;
+        left: 20px;
+        top: 100px;
+        margin: 30px;
+        margin-left: 0;
+    }
+
+    .map {
+        width: 100vw;
+        height: 80vh;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .container .workspace .cont-left .linear1 h2 {
+        margin-left: 10px;
+        width: 200%;
+    }
+
+    button {
+        width: 600px;
+    }
+}
